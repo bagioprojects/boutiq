@@ -489,186 +489,124 @@ export const CheckoutTemplate: React.FC = () => {
                   </span>
                 </div>
 
-                {/* KARGO FİRMALARI SEÇENEKLERİ */}
+                {/* KARGO FİRMALARI SEÇENEKLERİ (DESKTOP & MOBİL AYRI UYUMLU GÖRÜNÜM) */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {/* 1. YURTİÇİ KARGO */}
                   <div
+                    className={`fk-cargo-card ${shippingMethod === 'yurtici' ? 'selected' : ''}`}
                     onClick={() => setShippingMethod('yurtici')}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '16px 20px',
-                      borderRadius: '12px',
-                      border: shippingMethod === 'yurtici' ? '2px solid #ff6000' : '1.5px solid #e2e8f0',
-                      backgroundColor: shippingMethod === 'yurtici' ? '#fffaf5' : '#ffffff',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      boxShadow: shippingMethod === 'yurtici' ? '0 4px 14px rgba(255, 96, 0, 0.08)' : 'none',
-                    }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1 }}>
-                      {/* Custom Radio Button */}
-                      <div
-                        style={{
-                          width: '20px',
-                          height: '20px',
-                          borderRadius: '50%',
-                          border: shippingMethod === 'yurtici' ? '6px solid #ff6000' : '2px solid #cbd5e1',
-                          backgroundColor: '#ffffff',
-                          flexShrink: 0,
-                          transition: 'all 0.15s ease',
-                        }}
-                      />
-
-                      {/* Yurtiçi Kargo Logo Container */}
-                      <div
-                        style={{
-                          width: '124px',
-                          height: '42px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          backgroundColor: '#ffffff',
-                          borderRadius: '8px',
-                          padding: '4px 10px',
-                          border: '1px solid #e2e8f0',
-                          flexShrink: 0,
-                          boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
-                        }}
-                      >
-                        <img
-                          src="/images/yurtici_kargo.svg"
-                          alt="Yurtiçi Kargo"
-                          style={{
-                            maxWidth: '100%',
-                            maxHeight: '30px',
-                            objectFit: 'contain',
-                            display: 'block',
-                          }}
-                        />
-                      </div>
-
-                      {/* Info Text */}
-                      <div style={{ minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                          <strong style={{ fontSize: '14.5px', fontWeight: 800, color: '#0f172a' }}>
-                            Yurtiçi Kargo
-                          </strong>
-                          <span
-                            style={{
-                              fontSize: '11px',
-                              fontWeight: 700,
-                              color: '#16a34a',
-                              backgroundColor: '#f0fdf4',
-                              padding: '2px 8px',
-                              borderRadius: '6px',
-                            }}
-                          >
-                            Hızlı Teslimat
+                    {/* MASAÜSTÜ (WEB) GÖRÜNÜMÜ */}
+                    <div className="fk-cargo-desktop-view">
+                      <div className="fk-cargo-desktop-left">
+                        <div className={`fk-cargo-radio ${shippingMethod === 'yurtici' ? 'active' : ''}`} />
+                        <div className="fk-cargo-logo-box">
+                          <img src="/images/yurtici_kargo.svg" alt="Yurtiçi Kargo" />
+                        </div>
+                        <div className="fk-cargo-info">
+                          <div className="fk-cargo-title-row">
+                            <strong className="fk-cargo-name">Yurtiçi Kargo</strong>
+                            <span className="fk-cargo-badge badge-green">Hızlı Teslimat</span>
+                          </div>
+                          <span className="fk-cargo-desc">
+                            Saat 16:00'ya kadar verilen siparişlerde aynı gün kargoda (1-2 İş Günü)
                           </span>
                         </div>
-                        <span style={{ fontSize: '12px', color: '#64748b', marginTop: '3px', display: 'block' }}>
-                          Saat 16:00'ya kadar verilen siparişlerde aynı gün kargoda (1-2 İş Günü)
-                        </span>
+                      </div>
+                      <div className="fk-cargo-price">
+                        {shipping === 0 ? (
+                          <span className="fk-free-shipping">ÜCRETSİZ</span>
+                        ) : (
+                          `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`
+                        )}
                       </div>
                     </div>
 
-                    {/* Fiyat */}
-                    <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: '12px' }}>
-                      <div style={{ fontSize: '14.5px', fontWeight: 900, color: shipping === 0 ? '#16a34a' : '#0f172a' }}>
-                        {shipping === 0 ? 'ÜCRETSİZ' : `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`}
+                    {/* MOBİL GÖRÜNÜM (RESPONSIVE AYRI GÖRÜNÜM) */}
+                    <div className="fk-cargo-mobile-view">
+                      <div className="fk-cargo-mobile-top">
+                        <div className="fk-cargo-mobile-left">
+                          <div className={`fk-cargo-radio ${shippingMethod === 'yurtici' ? 'active' : ''}`} />
+                          <div className="fk-cargo-logo-box-mobile">
+                            <img src="/images/yurtici_kargo.svg" alt="Yurtiçi Kargo" />
+                          </div>
+                        </div>
+                        <div className="fk-cargo-mobile-price">
+                          {shipping === 0 ? (
+                            <span className="fk-free-shipping">ÜCRETSİZ</span>
+                          ) : (
+                            `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`
+                          )}
+                        </div>
+                      </div>
+                      <div className="fk-cargo-mobile-body">
+                        <div className="fk-cargo-mobile-header-row">
+                          <strong className="fk-cargo-mobile-name">Yurtiçi Kargo</strong>
+                          <span className="fk-cargo-badge badge-green">Hızlı Teslimat</span>
+                        </div>
+                        <span className="fk-cargo-mobile-desc">
+                          Saat 16:00'ya kadar verilen siparişlerde aynı gün kargoda (1-2 İş Günü)
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   {/* 2. MNG KARGO */}
                   <div
+                    className={`fk-cargo-card ${shippingMethod === 'mng' ? 'selected' : ''}`}
                     onClick={() => setShippingMethod('mng')}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '16px 20px',
-                      borderRadius: '12px',
-                      border: shippingMethod === 'mng' ? '2px solid #ff6000' : '1.5px solid #e2e8f0',
-                      backgroundColor: shippingMethod === 'mng' ? '#fffaf5' : '#ffffff',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      boxShadow: shippingMethod === 'mng' ? '0 4px 14px rgba(255, 96, 0, 0.08)' : 'none',
-                    }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1 }}>
-                      {/* Custom Radio Button */}
-                      <div
-                        style={{
-                          width: '20px',
-                          height: '20px',
-                          borderRadius: '50%',
-                          border: shippingMethod === 'mng' ? '6px solid #ff6000' : '2px solid #cbd5e1',
-                          backgroundColor: '#ffffff',
-                          flexShrink: 0,
-                          transition: 'all 0.15s ease',
-                        }}
-                      />
-
-                      {/* MNG Kargo Logo Container */}
-                      <div
-                        style={{
-                          width: '124px',
-                          height: '42px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          backgroundColor: '#ffffff',
-                          borderRadius: '8px',
-                          padding: '4px 10px',
-                          border: '1px solid #e2e8f0',
-                          flexShrink: 0,
-                          boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
-                        }}
-                      >
-                        <img
-                          src="/images/mng_kargo.svg"
-                          alt="MNG Kargo"
-                          style={{
-                            maxWidth: '100%',
-                            maxHeight: '24px',
-                            objectFit: 'contain',
-                            display: 'block',
-                          }}
-                        />
-                      </div>
-
-                      {/* Info Text */}
-                      <div style={{ minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                          <strong style={{ fontSize: '14.5px', fontWeight: 800, color: '#0f172a' }}>
-                            MNG Kargo
-                          </strong>
-                          <span
-                            style={{
-                              fontSize: '11px',
-                              fontWeight: 700,
-                              color: '#2563eb',
-                              backgroundColor: '#eff6ff',
-                              padding: '2px 8px',
-                              borderRadius: '6px',
-                            }}
-                          >
-                            Ekspres Teslimat
+                    {/* MASAÜSTÜ (WEB) GÖRÜNÜMÜ */}
+                    <div className="fk-cargo-desktop-view">
+                      <div className="fk-cargo-desktop-left">
+                        <div className={`fk-cargo-radio ${shippingMethod === 'mng' ? 'active' : ''}`} />
+                        <div className="fk-cargo-logo-box">
+                          <img src="/images/mng_kargo.svg" alt="MNG Kargo" />
+                        </div>
+                        <div className="fk-cargo-info">
+                          <div className="fk-cargo-title-row">
+                            <strong className="fk-cargo-name">MNG Kargo</strong>
+                            <span className="fk-cargo-badge badge-blue">Ekspres Teslimat</span>
+                          </div>
+                          <span className="fk-cargo-desc">
+                            Türkiye geneli güvenli ve hızlı teslimat ağı (1-2 İş Günü)
                           </span>
                         </div>
-                        <span style={{ fontSize: '12px', color: '#64748b', marginTop: '3px', display: 'block' }}>
-                          Türkiye geneli güvenli ve hızlı teslimat ağı (1-2 İş Günü)
-                        </span>
+                      </div>
+                      <div className="fk-cargo-price">
+                        {shipping === 0 ? (
+                          <span className="fk-free-shipping">ÜCRETSİZ</span>
+                        ) : (
+                          `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`
+                        )}
                       </div>
                     </div>
 
-                    {/* Fiyat */}
-                    <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: '12px' }}>
-                      <div style={{ fontSize: '14.5px', fontWeight: 900, color: shipping === 0 ? '#16a34a' : '#0f172a' }}>
-                        {shipping === 0 ? 'ÜCRETSİZ' : `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`}
+                    {/* MOBİL GÖRÜNÜM (RESPONSIVE AYRI GÖRÜNÜM) */}
+                    <div className="fk-cargo-mobile-view">
+                      <div className="fk-cargo-mobile-top">
+                        <div className="fk-cargo-mobile-left">
+                          <div className={`fk-cargo-radio ${shippingMethod === 'mng' ? 'active' : ''}`} />
+                          <div className="fk-cargo-logo-box-mobile">
+                            <img src="/images/mng_kargo.svg" alt="MNG Kargo" />
+                          </div>
+                        </div>
+                        <div className="fk-cargo-mobile-price">
+                          {shipping === 0 ? (
+                            <span className="fk-free-shipping">ÜCRETSİZ</span>
+                          ) : (
+                            `${shipping.toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺`
+                          )}
+                        </div>
+                      </div>
+                      <div className="fk-cargo-mobile-body">
+                        <div className="fk-cargo-mobile-header-row">
+                          <strong className="fk-cargo-mobile-name">MNG Kargo</strong>
+                          <span className="fk-cargo-badge badge-blue">Ekspres Teslimat</span>
+                        </div>
+                        <span className="fk-cargo-mobile-desc">
+                          Türkiye geneli güvenli ve hızlı teslimat ağı (1-2 İş Günü)
+                        </span>
                       </div>
                     </div>
                   </div>
