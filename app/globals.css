@@ -919,7 +919,10 @@ select option {
   }
 
   .fk-main-header {
-    padding: 10px 14px !important;
+    padding: 14px 16px 12px 16px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    width: 100% !important;
   }
 
   .fk-main-header-content {
@@ -928,6 +931,9 @@ select option {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     gap: 12px !important;
     text-align: center !important;
   }
@@ -939,6 +945,8 @@ select option {
     align-items: center !important;
     text-align: center !important;
     margin: 0 auto !important;
+    justify-self: center !important;
+    grid-area: unset !important;
   }
 
   .fk-logo-link {
@@ -951,15 +959,18 @@ select option {
 
   .fk-header-logo {
     display: block !important;
-    height: 38px !important;
+    height: 42px !important;
     width: auto !important;
-    max-width: 170px !important;
+    max-width: 184px !important;
     margin: 0 auto !important;
   }
 
   .fk-search-area {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 580px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .fk-user-actions-desktop {

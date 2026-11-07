@@ -148,3 +148,4 @@ docker compose logs -f
 
 ## 🔐 Güvenlik Notları
 - Sunucuda üretim ortamında çalıştırırken `.env.example` dosyasını `.env` olarak kopyalayabilir ve `JWT_SECRET` değerini güvenli, rastgele bir karakter dizisiyle güncelleyebilirsiniz.
+

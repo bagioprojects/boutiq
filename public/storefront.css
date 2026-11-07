@@ -971,239 +971,85 @@ button {
 }
 
 /* =========================================================
-   MOBİL UYUMLULUK (RESPONSIVE %100 TAB & HEADER)
+   MOBİL VE TABLET HEADER & LOGO ORTALAMA (<= 1024px)
    ========================================================= */
-@media (max-width: 992px) {
-  .fk-top-bar {
-    padding: 6px 0;
-    font-size: 11.5px;
-  }
-  .fk-slide-title { font-size: 36px; }
-  .fk-slide-handwritten-note { right: 80px; top: 20px; }
-}
-
-@media (max-width: 768px) {
-  /* Üst Bar: Mobilde Gizle */
+@media (max-width: 1024px) {
+  /* Üst Bar: Mobilde & Tablette Gizle */
   .fk-top-bar {
     display: none !important;
   }
 
-  /* Ana Header: 2 Satırlı Grid (Satır 1: Sol Marka Lockup + Sağ Simetrik Aksiyonlar, Satır 2: Tam Genişlik Arama) */
+  .fk-desktop-category-bar {
+    display: none !important;
+  }
+
+  /* Ana Header: Mobil ve Tablette Tam Ortalanmış Logo & Arama */
   .fk-main-header {
-    padding: 10px 0 12px !important;
+    padding: 14px 16px 12px 16px !important;
     background: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    width: 100% !important;
   }
 
   .fk-main-header-content {
-    display: grid !important;
-    grid-template-columns: 1fr auto !important;
-    grid-template-areas:
-      "logo actions"
-      "search search" !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    column-gap: 12px !important;
-    row-gap: 10px !important;
+    justify-content: center !important;
+    text-align: center !important;
     width: 100% !important;
-    padding: 0 14px !important;
-    box-sizing: border-box !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 12px !important;
   }
 
-  /* 1. Sol: media_1794005169478_0fb39134.png Referanslı İkon Rozeti + Marka Başlığı + Subtitle Badge */
+  /* 1. Logo Alanı: %100 Ortalanmış ve Simetrik */
   .fk-logo-area {
-    grid-area: logo !important;
-    justify-self: start !important;
+    width: 100% !important;
     display: flex !important;
+    justify-content: center !important;
     align-items: center !important;
-    text-align: left !important;
-    width: auto !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    justify-self: center !important;
+    grid-area: unset !important;
   }
 
   .fk-logo-link {
-    text-decoration: none !important;
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .fk-header-logo {
+    display: block !important;
+    height: 42px !important;
+    width: auto !important;
+    max-width: 184px !important;
+    margin: 0 auto !important;
   }
 
   .fk-logo-desktop {
-    display: none !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 
+  .fk-logo-mobile-wrap,
   .fk-logo-mobile-lockup {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-
-  .fk-logo-badge-icon {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 12px !important;
-    background: linear-gradient(135deg, #ff6000 0%, #ff7700 100%) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 3px 10px rgba(255, 96, 0, 0.28) !important;
-    flex-shrink: 0 !important;
-  }
-
-  .fk-logo-mobile-texts {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-  }
-
-  .fk-brand-title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 21px !important;
-    font-weight: 900 !important;
-    letter-spacing: -0.02em !important;
-    color: #0f172a !important;
-    line-height: 1.1 !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-  }
-
-  .fk-title-orange {
-    color: #ff6000 !important;
-  }
-
-  .fk-brand-subtitle-badge {
-    margin-top: 3px !important;
-    display: inline-block !important;
-    background: #0f172a !important;
-    color: #ff6000 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 8.5px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.12em !important;
-    padding: 2.5px 7px !important;
-    border-radius: 4px !important;
-    line-height: 1 !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-  }
-
-  /* Desktop Aksiyonlarını Mobilde Gizle */
-  .fk-user-actions-desktop {
     display: none !important;
   }
 
-  /* 2. Sağ: Referans Görselle Birebir Simetrik Squircle Aksiyon Butonları */
-  .fk-mobile-action-group {
-    grid-area: actions !important;
-    justify-self: end !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .fk-mobile-action-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    border: none !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-    flex-shrink: 0 !important;
-  }
-
-  .fk-mobile-action-btn:active {
-    transform: scale(0.94) !important;
-  }
-
-  /* Sarı / Turuncu Çağrı ve İletişim Butonu */
-  .fk-mobile-btn-call {
-    background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%) !important;
-    color: #0f172a !important;
-    box-shadow: 0 3px 10px rgba(251, 133, 0, 0.3) !important;
-  }
-
-  .fk-mobile-btn-call svg {
-    stroke: #0f172a !important;
-    display: block !important;
-  }
-
-  /* Sepet Butonu ve Bildirim Rozeti */
-  .fk-mobile-btn-cart {
-    background: #ffffff !important;
-    border: 1.5px solid #e2e8f0 !important;
-    color: #0f172a !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-    position: relative !important;
-  }
-
-  .fk-mobile-cart-wrap {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .fk-mobile-btn-cart .fk-badge {
-    position: absolute !important;
-    top: -8px !important;
-    right: -8px !important;
-    background: #ff6000 !important;
-    color: #ffffff !important;
-    border-radius: 50% !important;
-    min-width: 17px !important;
-    height: 17px !important;
-    font-size: 10px !important;
-    font-weight: 800 !important;
-    border: 2px solid #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 2px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Koyu Lacivert 'MENÜ' Butonu */
-  .fk-mobile-btn-menu {
-    background: #0f172a !important;
-    color: #ffffff !important;
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25) !important;
-  }
-
-  .fk-mobile-menu-inner {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 2px !important;
-  }
-
-  .fk-mobile-btn-menu svg {
-    stroke: #ffffff !important;
-    display: block !important;
-  }
-
-  .fk-mobile-menu-label {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 8px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.06em !important;
-    color: #ffffff !important;
-    line-height: 1 !important;
-  }
-
-  /* 3. İkinci Satır: %100 Genişlikte Yuvarlatılmış Modern Arama Çubuğu */
+  /* 2. Arama Alanı: Ortalanmış */
   .fk-search-area {
-    grid-area: search !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 2px 0 0 0 !important;
+    max-width: 580px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    grid-area: unset !important;
   }
 
   .fk-search-form {
@@ -1213,12 +1059,12 @@ button {
 
   .fk-search-input {
     width: 100% !important;
-    height: 42px !important;
+    height: 44px !important;
     background-color: #f8fafc !important;
     border: 1.5px solid #e2e8f0 !important;
-    border-radius: 21px !important;
-    padding: 0 44px 0 16px !important;
-    font-size: 13.5px !important;
+    border-radius: 22px !important;
+    padding: 0 46px 0 18px !important;
+    font-size: 14px !important;
     color: #0f172a !important;
     box-sizing: border-box !important;
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.02) !important;
@@ -1234,7 +1080,7 @@ button {
 
   .fk-search-btn {
     position: absolute !important;
-    right: 4px !important;
+    right: 6px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     background: transparent !important;
@@ -1248,6 +1094,29 @@ button {
     justify-content: center !important;
     cursor: pointer !important;
   }
+
+  /* 3. Mobil Kategorilere Gözat Butonu */
+  .fk-mobile-browse-bar {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .fk-mobile-browse-btn {
+    width: 100% !important;
+    max-width: 580px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Desktop Aksiyonlarını Mobilde Gizle */
+  .fk-user-actions-desktop {
+    display: none !important;
+  }
+
+  .fk-mobile-action-group {
+    display: none !important;
+  }
+}
 
   /* 5. 3. Satır: Yatay Tab Menü (Asla 2 Satıra Kırılmaz, Parmakla Yumuşak Kaydırılır) */
   .fk-nav-bar {

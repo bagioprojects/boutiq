@@ -20,3 +20,4 @@ const db = new DatabaseSync(dbPath);
 
 db.exec(sql);
 console.log(`Database restored successfully from ${sqlPath} to ${dbPath}`);
+

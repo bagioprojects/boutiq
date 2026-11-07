@@ -45,3 +45,4 @@ sqlDump += `PRAGMA foreign_keys = ON;\n`;
 
 fs.writeFileSync(outPath, sqlDump, 'utf8');
 console.log(`Database exported successfully to ${outPath} (${tables.length} tables, ${Buffer.byteLength(sqlDump)} bytes)`);
+
