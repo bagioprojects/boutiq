@@ -1341,4 +1341,11 @@ select option {
   }
 }
 
+/* Bottom Alt Menü Nokta Göstergesini Kaldır */
+.fk-bottom-nav-item::after,
+.fk-bottom-nav-item.active::after {
+  display: none !important;
+  content: none !important;
+}
+
 
