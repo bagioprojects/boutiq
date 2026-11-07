@@ -1,0 +1,1333 @@
+/* =========================================================
+   FK BUTİK GLOBAL RESPONSIVE & MOBILE-FIRST DESIGN SYSTEM
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 8px 32px 8px 12px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+select:focus {
+  border-color: #ff6000;
+  box-shadow: 0 0 0 3px rgba(255, 96, 0, 0.12);
+}
+
+select option {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 8px 12px;
+}
+
+/* iOS Safari Input Otomatik Yakınlaştırma (Zoom) Önleme */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* =========================================================
+   1. OTOMATİK BOYUTLANAN (FLUID) ÜRÜN KARTLARI IZGARASI
+   ========================================================= */
+.fk-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .fk-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fk-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+}
+
+/* =========================================================
+   2. KOLEKSİYON / KATEGORİ YERLEŞİMİ (RESPONSIVE)
+   ========================================================= */
+.fk-collection-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fk-collection-sidebar-desktop {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.fk-collection-mobile-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .fk-collection-layout {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .fk-collection-sidebar-desktop {
+    display: none !important;
+  }
+
+  .fk-collection-mobile-bar {
+    display: flex !important;
+    align-items: center;
+    justifyContent: space-between;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+}
+
+/* =========================================================
+   3. ÜRÜN DETAY SAYFASI (RESPONSIVE)
+   ========================================================= */
+.fk-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(420px, 540px) 1fr;
+  gap: 48px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fk-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.fk-similar-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(20% - 12px);
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+.fk-similar-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ürün Detay Sabit Satın Alma Barı (SADECE MOBİL İÇİN) */
+.fk-mobile-sticky-buy-bar {
+  display: none !important;
+}
+
+.fk-pdp-sticky-add-btn {
+  height: 48px;
+  min-width: 200px;
+  background-color: #ff6000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(255, 96, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.fk-pdp-sticky-add-btn:hover {
+  background-color: #e65600;
+}
+
+@media (max-width: 1024px) {
+  .fk-detail-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .fk-similar-slider {
+    grid-auto-columns: calc(33.333% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .fk-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .fk-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .fk-similar-slider {
+    grid-auto-columns: calc(50% - 6px) !important;
+    gap: 10px !important;
+  }
+
+  /* Mobil Altta Sabit Satın Alma Barı (Sadece Mobilde Tabana Yapışık) */
+  .fk-mobile-sticky-buy-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom, 10px)) !important;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    align-items: center;
+  }
+
+  .fk-pdp-sticky-add-btn {
+    flex: 1;
+    max-width: 220px;
+    min-width: 130px;
+    height: 44px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+}
+
+/* =========================================================
+   4. ALIŞVERİŞ SEPETİ & CHECKOUT SAYFASI (RESPONSIVE)
+   ========================================================= */
+.fk-cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fk-cart-items-col {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.fk-cart-summary-col {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.fk-checkout-grid-2,
+.fk-checkout-grid-3 {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .fk-cart-layout {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fk-cart-container {
+    padding: 0 12px !important;
+    padding-bottom: 120px !important;
+    margin-top: 14px !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .fk-cart-container {
+    padding: 0 12px !important;
+    padding-bottom: 120px !important;
+  }
+  .fk-cart-item-card {
+    padding: 12px !important;
+    gap: 12px !important;
+  }
+  .fk-cart-summary-col > div {
+    padding: 16px !important;
+    border-radius: 12px !important;
+  }
+  .fk-checkout-grid-2,
+  .fk-checkout-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* =========================================================
+   5. MOBİL YARDIMCI VE BOTTOM SHEET SINIFLARI
+   ========================================================= */
+.fk-hide-on-desktop {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .fk-hide-on-mobile {
+    display: none !important;
+  }
+  .fk-hide-on-desktop {
+    display: block !important;
+  }
+
+  /* Mobil Alt Bar İçin Güvenli Alan */
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 8px)) !important;
+  }
+}
+
+/* =========================================================
+   6. MEGA MENÜ ANİMASYON VE LİSTE TEMİZLEME
+   ========================================================= */
+@keyframes fkMegaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fk-categories-mega-menu,
+.fk-categories-mega-menu ul,
+.fk-categories-mega-menu li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+/* =========================================================
+   7. REFERANS HEADER & KATEGORİ AÇILIR MENÜ SİSTEMİ
+   ========================================================= */
+.fk-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fk-top-bar {
+  background: #f8fafc;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 12px;
+  color: #475569;
+  padding: 6px 0;
+}
+
+.fk-top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fk-top-contact-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fk-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fk-main-header {
+  padding: 14px 0;
+}
+
+.fk-main-header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.fk-logo-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.fk-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.fk-header-logo {
+  display: block;
+  height: 42px;
+  width: auto;
+  max-width: 184px;
+}
+
+.fk-search-area {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  justify-self: center;
+}
+
+.fk-user-actions-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  justify-self: end;
+}
+
+.fk-search-form {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 24px;
+  padding: 4px 6px 4px 16px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.fk-search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13.5px;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.fk-search-btn {
+  background: #ff6000;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fk-user-actions-desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fk-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fk-icon-badge-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fk-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 1px 5px;
+}
+
+.fk-badge-orange {
+  background: #ff6000;
+}
+
+/* Masaüstü Referans Kategori Navigasyonu (Resim 3, 4, 5) */
+.fk-desktop-category-bar {
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  background: #ffffff;
+  position: relative;
+  z-index: 100;
+}
+
+.fk-ref-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fk-ref-nav-item {
+  position: relative;
+}
+
+.fk-ref-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 14px;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.fk-ref-nav-link:hover,
+.fk-ref-nav-link.active {
+  color: #0f172a;
+  border-bottom: 2px solid #64748b;
+}
+
+.fk-ref-nav-star {
+  color: #0f172a;
+}
+
+/* Referans Görseldeki Birebir Dropdown Kartı (12px rounded, soft shadow, thin dividers) */
+.fk-ref-dropdown-card {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  min-width: 200px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  overflow: hidden;
+  padding: 6px 0;
+  animation: fkMegaFadeIn 0.18s ease-out;
+}
+
+.fk-ref-dropdown-row {
+  display: block;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.fk-ref-dropdown-row:last-child {
+  border-bottom: none;
+}
+
+.fk-ref-dropdown-row:hover {
+  background-color: #f8fafc;
+  color: #ff6000;
+}
+
+/* Mobil Kategoriye Gözat Barı */
+.fk-mobile-browse-bar {
+  display: none;
+  padding: 8px 16px 10px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* ========================================================
+   HİKAYELER / 3 ÖZEL STORY KATEGORİSİ (SADECE MOBİLDE GÖRÜNÜR)
+   ======================================================== */
+.fk-story-section {
+  display: none !important;
+}
+
+.fk-story-scroll-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 22px !important;
+  width: 100% !important;
+  max-width: 380px !important;
+  margin: 0 auto !important;
+  padding: 4px 6px !important;
+  box-sizing: border-box;
+}
+
+.fk-story-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 7px !important;
+  text-decoration: none !important;
+  flex: 1 1 0% !important;
+  max-width: 96px !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center !important;
+}
+
+.fk-story-item:active {
+  transform: scale(0.95);
+}
+
+.fk-story-circle {
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 50% !important;
+  padding: 2.5px !important;
+  background: linear-gradient(135deg, #ff7a1a 0%, #ff5500 50%, #ea580c 100%) !important;
+  box-shadow: 0 4px 12px rgba(255, 96, 0, 0.22) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.fk-story-circle img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border: 2.5px solid #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+.fk-story-title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.fk-story-line1 {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.fk-story-line2 {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.fk-story-item:hover .fk-story-line1,
+.fk-story-item:hover .fk-story-line2 {
+  color: #ff6000;
+}
+
+.fk-mobile-browse-btn {
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+}
+
+/* Mobil Drawer (Tam Ekran) */
+.fk-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 99998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fk-drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fk-mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  background: #ffffff !important;
+  z-index: 99999 !important;
+  transform: translateX(-100%) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  will-change: transform;
+}
+
+.fk-mobile-drawer.active {
+  transform: translateX(0) !important;
+}
+
+.fk-drawer-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.fk-drawer-close {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.fk-drawer-close:hover,
+.fk-drawer-close:active {
+  background: #e2e8f0;
+  transform: scale(0.95);
+  color: #0f172a;
+}
+
+.fk-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 20px 60px;
+}
+
+.fk-drawer-section-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.fk-drawer-direct-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  text-decoration: none;
+  background: #f8fafc;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.fk-drawer-direct-link:active {
+  background: #fff7ed;
+  border-color: #fdba74;
+  color: #ea580c;
+}
+
+.fk-drawer-accordion-wrap {
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.fk-drawer-accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: none;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.fk-drawer-accordion-btn:active {
+  background: #f1f5f9;
+}
+
+.fk-drawer-accordion-content {
+  padding: 8px 12px 12px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.fk-drawer-sub-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+
+.fk-drawer-sub-link:hover,
+.fk-drawer-sub-link:active {
+  background: #fff7ed;
+  color: #ff6000;
+}
+
+/* =========================================================
+   8. MOBİL HEADER & BUTON SENKRONİZASYONU (<= 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .fk-desktop-category-bar {
+    display: none !important;
+  }
+
+  .fk-mobile-browse-bar {
+    display: block !important;
+  }
+
+  /* Story Görünümü Sadece Mobilde Görünür */
+  .fk-story-section {
+    display: block !important;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 8px 12px 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .fk-top-bar {
+    display: none !important;
+  }
+
+  .fk-main-header {
+    padding: 10px 14px !important;
+  }
+
+  .fk-main-header-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  .fk-logo-area {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .fk-logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .fk-header-logo {
+    display: block !important;
+    height: 38px !important;
+    width: auto !important;
+    max-width: 170px !important;
+    margin: 0 auto !important;
+  }
+
+  .fk-search-area {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .fk-user-actions-desktop {
+    display: none !important;
+  }
+}
+
+
+
+/* =========================================================
+   MOBİL ÜRÜN DETAYI HEADER & BOTTOM NAV ÖZEL DÜZENLEMELERİ
+   (Referans Görsel: Logo gizlenir, [<] [Arama] [👤 ♡ 🛒] gelir)
+   ========================================================= */
+.fk-mobile-pdp-header-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Ürün detayında normal logo, normal arama ve üst duyuru gizlenir */
+  .fk-header-pdp-mode .fk-top-bar,
+  .fk-header-pdp-mode .fk-logo-area,
+  .fk-header-pdp-mode .fk-search-area,
+  .fk-header-pdp-mode .fk-desktop-category-bar,
+  .fk-header-pdp-mode .fk-mobile-browse-bar {
+    display: none !important;
+  }
+
+  .fk-header-pdp-mode .fk-main-header {
+    padding: 8px 12px !important;
+  }
+
+  .fk-header-pdp-mode .fk-main-header-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Mobil PDP Özel Header Çubuğu */
+  .fk-header-pdp-mode .fk-mobile-pdp-header-bar {
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .fk-pdp-back-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #0f172a;
+    flex-shrink: 0;
+  }
+
+  .fk-pdp-search-pill {
+    flex: 1;
+    height: 38px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    min-width: 0;
+  }
+
+  .fk-pdp-search-placeholder {
+    font-size: 13.5px;
+    color: #94a3b8;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fk-pdp-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .fk-pdp-action-btn {
+    background: none;
+    border: none;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .fk-pdp-badge-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fk-badge-pdp {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 768px) { .fk-pdp-main { padding-bottom: 80px !important; } }
+
+/* =========================================================
+   FOOTER MOBİL VE TABLET GİZLEME (<= 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .fk-site-footer {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   BREADCRUMB MOBİL GİZLEME (<= 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  .fk-breadcrumbs-nav {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   GENEL ANİMASYONLAR (MODAL & BANNER GEÇİŞLERİ)
+   ========================================================= */
+@keyframes fkSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fkFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fkScaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SEPET SAYFASI MOBİL STICKY BAR
+   ========================================================= */
+.fk-cart-sticky-bar {
+  display: none;
+}
+@media (max-width: 768px) {
+  /* =========================================================
+   SEPET SAYFASI MOBİL STICKY BAR
+   ========================================================= */
+.fk-cart-sticky-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom, 12px));
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   ÜRÜN DETAY MOBİL FULL-BLEED GÖRSEL & DETAYLI ÖZELLİKLER GRID
+   ========================================================= */
+.fk-all-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1024px) {
+  .fk-all-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .fk-all-features-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   ÜRÜN DETAY SAYFASI TAM MOBİL & TABLET RESPONSIVE ALTYAPISI
+   ========================================================= */
+.fk-gallery-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.fk-gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background-color: #f8fafc;
+}
+
+.fk-gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.fk-gallery-track::-webkit-scrollbar,
+.fk-thumbnail-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .fk-pdp-main {
+    padding: 0 !important;
+    margin: 0 auto 60px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .fk-breadcrumbs-nav {
+    display: none !important;
+  }
+  .fk-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+  }
+  .fk-pdp-gallery-col {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .fk-gallery-wrapper {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .fk-gallery-slide {
+    width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    max-height: 72vh !important;
+  }
+  .fk-gallery-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    border-radius: 0 !important;
+  }
+  .fk-thumbnail-row {
+    padding: 10px 16px !important;
+    margin: 0 !important;
+  }
+  .fk-pdp-content-col {
+    padding: 16px 16px 32px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .fk-desktop-only {
+    display: none !important;
+  }
+  .fk-pdp-bottom-section {
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+}
+
+/* Auth Sayfalarında Header Ortalanmış Logo */
+.fk-auth-header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0;
+}
+
+/* Profil & Hesap Sayfaları Mobil Duyarlılık */
+@media (max-width: 880px) {
+  .fk-account-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .fk-desktop-only {
+    display: none !important;
+  }
+}
+
+/* Auth / Profil Sayfaları Mobil Header Modu */
+@media (max-width: 768px) {
+  .fk-header-auth-mode .fk-search-area,
+  .fk-header-auth-mode .fk-mobile-browse-bar {
+    display: none !important;
+  }
+  .fk-header-auth-mode .fk-logo-area {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Lüks Favoriler Grid'i (Desktop 4 Kolon, Tablet 3 Kolon, Mobil 2 Kolon) */
+.fk-favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .fk-favorites-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fk-favorites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+}
+
+

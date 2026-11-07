@@ -1,0 +1,2320 @@
+/* FK BUTIK PIXEL-PERFECT STOREFRONT CSS (HAYDIGIY REFERANSINA BIREBIR ESITLENDI) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=Caveat:wght@700&display=swap');
+
+:root {
+  --fk-orange: #ff6000;
+  --fk-orange-hover: #e55000;
+  --fk-orange-light: #fff8f5;
+  --fk-black: #1e293b;
+  --fk-gray-dark: #334155;
+  --fk-gray-medium: #64748b;
+  --fk-gray-light: #f8fafc;
+  --fk-gray-border: #e2e8f0;
+  --fk-white: #ffffff;
+  
+  --fk-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fk-font-display: 'Montserrat', sans-serif;
+  --fk-font-handwriting: 'Caveat', cursive, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fk-font-sans);
+  color: var(--fk-black);
+  background-color: var(--fk-white);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.fk-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =========================================================
+   1. KADEME: TOP BAR (Referans: Kompakt 30px)
+   ========================================================= */
+.fk-top-bar {
+  background-color: #fafafa;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 5px 0;
+  font-size: 12px;
+  color: var(--fk-gray-medium);
+}
+
+.fk-top-bar-content {
+  display: flex;
+  align-items: center;
+  justifyContent: flex-end;
+  gap: 20px;
+}
+
+.fk-top-contact-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fk-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-size: 12px;
+  transition: color 0.15s ease;
+}
+
+.fk-contact-item:hover {
+  color: var(--fk-orange);
+}
+
+.fk-contact-label {
+  color: #64748b;
+}
+
+.fk-contact-value {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.fk-whatsapp .fk-contact-value {
+  color: #0f766e;
+}
+
+.fk-divider {
+  color: #cbd5e1;
+}
+
+/* =========================================================
+   2. KADEME: MAIN HEADER (%100 SİMETRİK 3 SÜTUN GRİD)
+   ========================================================= */
+.fk-main-header {
+  background-color: var(--fk-white);
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.fk-main-header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.fk-logo-area {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.fk-logo-desktop {
+  display: block;
+}
+
+.fk-logo-mobile-wrap,
+.fk-logo-mobile-lockup {
+  display: none;
+}
+
+.fk-mobile-action-group {
+  display: none;
+}
+
+/* Arama Çubuğu (Ortalanmış ve Orantılı Genişleyen) */
+.fk-search-area {
+  justify-self: center;
+  width: 100%;
+  max-width: 620px;
+}
+
+.fk-search-form {
+  position: relative;
+  width: 100%;
+}
+
+.fk-search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 44px 0 22px;
+  font-size: 13.5px;
+  color: var(--fk-black);
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.fk-search-input:focus {
+  background-color: var(--fk-white);
+  border-color: var(--fk-orange);
+  box-shadow: 0 0 0 3px rgba(255, 96, 0, 0.12);
+}
+
+.fk-search-input::placeholder {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.fk-search-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fk-search-btn:hover {
+  color: var(--fk-orange);
+}
+
+/* Sağ Kullanıcı Butonları (Genişletilmiş, Dolgun & Oturmuş Rozetler - En Sağa Kilitli) */
+.fk-user-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.fk-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 14px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.fk-action-btn:hover {
+  background-color: #f8fafc;
+  color: var(--fk-orange);
+  border-color: #f1f5f9;
+}
+
+.fk-action-btn svg {
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.fk-action-btn:hover svg {
+  transform: translateY(-1px);
+}
+
+.fk-icon-badge-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fk-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.fk-badge-orange {
+  background-color: var(--fk-orange);
+}
+
+/* =========================================================
+   3. KADEME: NAV BAR (Genişletilmiş & Dolgun 44px Yükseklik)
+   ========================================================= */
+.fk-nav-bar {
+  background-color: var(--fk-white);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fk-nav-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.fk-category-trigger-wrap {
+  position: relative;
+}
+
+.fk-all-categories-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 51px;
+  padding: 0 24px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-bottom: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.fk-all-categories-btn:hover,
+.fk-all-categories-btn.active {
+  background-color: var(--fk-orange-light);
+  color: var(--fk-orange);
+}
+
+.fk-hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 18px;
+}
+
+.fk-hamburger-icon span {
+  display: block;
+  height: 2.2px;
+  width: 100%;
+  background-color: currentColor;
+  border-radius: 1px;
+}
+
+.fk-categories-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 860px;
+  max-width: 92vw;
+  background-color: var(--fk-white);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--fk-gray-border);
+  border-radius: 0 0 12px 12px;
+  z-index: 100;
+  padding: 24px 28px;
+  animation: fkFadeIn 0.2s ease-out;
+}
+
+@keyframes fkFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fk-mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.fk-mega-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-mega-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #ff6000;
+}
+
+.fk-mega-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fk-mega-title a:hover {
+  color: #ff6000;
+}
+
+.fk-mega-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fk-mega-list li a {
+  display: block;
+  font-size: 12.5px;
+  color: #475569;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: all 0.15s ease;
+}
+
+.fk-mega-list li a:hover {
+  color: #ff6000;
+  padding-left: 4px;
+}
+
+.fk-mega-list li.fk-mega-sub a {
+  font-size: 11.5px;
+  color: #64748b;
+  padding-left: 10px;
+}
+
+.fk-mega-list li.fk-mega-sub a:hover {
+  color: #ff6000;
+  padding-left: 14px;
+}
+
+.fk-mega-highlight-col {
+  background-color: #fffaf5;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px dashed #fed7aa;
+}
+
+.fk-mega-highlight-col .highlight-link {
+  font-weight: 700;
+  color: #0f172a !important;
+}
+
+.fk-mega-highlight-col .highlight-orange {
+  font-weight: 700;
+  color: #ea580c !important;
+}
+
+.fk-horizontal-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow: visible;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 51px;
+}
+
+.fk-horizontal-nav::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.fk-nav-link {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #334155;
+  padding: 14px 0;
+  line-height: 1.2;
+  position: relative;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.fk-nav-link:hover {
+  color: var(--fk-orange);
+}
+
+.fk-nav-link.fk-nav-orange {
+  color: var(--fk-orange);
+}
+
+/* =========================================================
+   HERO SLIDE BANNER (Haydigiy Referansı ile Birebir)
+   ========================================================= */
+.fk-hero-slider-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 14px 0 20px 0;
+  overflow: hidden;
+}
+
+.fk-hero-slider-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.fk-hero-slider-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 885;
+  min-height: 520px;
+  max-height: 620px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: #1a1a1a;
+  touch-action: pan-y;
+}
+
+.fk-hero-slider-track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.fk-hero-slide {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.fk-slide-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.fk-slide-full-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  text-decoration: none;
+}
+
+.fk-slide-hotspot-btn { display: none !important;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 176px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+  pointer-events: auto;
+}
+
+.fk-slide-full-link:hover .fk-slide-hotspot-btn { display: none !important;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.fk-slide-content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+.fk-slide-text-block {
+  max-width: 540px;
+  color: var(--fk-white);
+  z-index: 3;
+}
+
+.fk-slide-tagline {
+  display: block;
+  font-family: var(--fk-font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #eedecf;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.fk-slide-title {
+  font-family: var(--fk-font-display);
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.fk-slide-title .highlight-orange {
+  color: #ff6000;
+  display: block;
+}
+
+.fk-slide-title .highlight-white {
+  color: #ffffff;
+  display: block;
+}
+
+.fk-slide-subtitle {
+  font-size: 15.5px;
+  font-weight: 400;
+  color: #f7ede3;
+  line-height: 1.5;
+  margin-bottom: 26px;
+  max-width: 440px;
+}
+
+.fk-slide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 32px;
+  background-color: #ff6000;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(255, 96, 0, 0.45);
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.fk-slide-btn:hover {
+  background-color: #e05500;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 96, 0, 0.55);
+}
+
+.fk-slide-handwritten-note {
+  position: absolute;
+  right: 28%;
+  top: 35px;
+  z-index: 3;
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+.fk-slide-handwritten-note span {
+  font-family: 'Caveat', 'Dancing Script', 'Brush Script MT', cursive;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff6ee;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  line-height: 1.2;
+  display: block;
+  text-align: center;
+}
+
+/* Slider Navigasyon Okları (Referans Görsel ile Birebir Koyu Butonlar) */
+.fk-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 25;
+  width: 38px;
+  height: 52px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  border: none;
+  font-size: 22px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fk-slider-nav:hover {
+  background-color: rgba(0, 0, 0, 0.95);
+  color: #ff6000;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.fk-slider-prev {
+  left: 16px;
+}
+
+.fk-slider-next {
+  right: 16px;
+}
+
+/* Slider Dots */
+.fk-slider-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fk-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.fk-slider-dot.active {
+  width: 24px;
+  background-color: #ffffff;
+}
+
+.fk-slide-btn:hover {
+  background-color: var(--fk-orange-hover);
+  transform: translateY(-1px);
+}
+
+.fk-slide-handwritten-note {
+  font-family: var(--fk-font-handwriting);
+  font-size: 26px;
+  color: #fed7aa;
+  transform: rotate(-5deg);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Slider Nav Okları */
+.fk-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.fk-slider-nav:hover {
+  background-color: var(--fk-white);
+  color: var(--fk-orange);
+}
+
+.fk-slider-prev { left: 16px; }
+.fk-slider-next { right: 16px; }
+
+/* Slider Noktaları */
+.fk-slider-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+}
+
+.fk-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.fk-slider-dot.active {
+  width: 22px;
+  border-radius: 4px;
+  background-color: var(--fk-orange);
+}
+
+/* =========================================================
+   İKİLİ PROMO BANNER ALANI (Toplam 3 Banner Mimarisi)
+   ========================================================= */
+.fk-promo-banners-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0 32px 0;
+}
+
+.fk-promo-banners-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.fk-promo-banners-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.fk-promo-card {
+  position: relative;
+  display: block;
+  flex: 0 1 370px;
+  max-width: 370px;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #f8fafc;
+}
+
+.fk-promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.fk-promo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fk-promo-card:hover img {
+  transform: scale(1.035);
+}
+
+/* =========================================================
+   MOBİL MENÜ ÇEKMECESİ (OFF-CANVAS DRAWER)
+   ========================================================= */
+.fk-mobile-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #1e293b;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.fk-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 99998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.fk-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fk-mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  background-color: #ffffff !important;
+  z-index: 99999 !important;
+  transform: translateX(-100%) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  will-change: transform;
+}
+
+.fk-mobile-drawer.active {
+  transform: translateX(0) !important;
+}
+
+.fk-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.fk-drawer-close {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.fk-drawer-close:hover,
+.fk-drawer-close:active {
+  background: #e2e8f0;
+  transform: scale(0.95);
+  color: #0f172a;
+}
+
+.fk-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 20px 60px;
+}
+
+.fk-drawer-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin: 16px 0 8px;
+}
+
+.fk-drawer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fk-drawer-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.fk-drawer-nav-link:hover, .fk-drawer-nav-link.active {
+  background-color: #fff7ed;
+  color: #ff6000;
+}
+
+.fk-drawer-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+}
+
+/* =========================================================
+   MOBİL UYUMLULUK (RESPONSIVE %100 TAB & HEADER)
+   ========================================================= */
+@media (max-width: 992px) {
+  .fk-top-bar {
+    padding: 6px 0;
+    font-size: 11.5px;
+  }
+  .fk-slide-title { font-size: 36px; }
+  .fk-slide-handwritten-note { right: 80px; top: 20px; }
+}
+
+@media (max-width: 768px) {
+  /* Üst Bar: Mobilde Gizle */
+  .fk-top-bar {
+    display: none !important;
+  }
+
+  /* Ana Header: 2 Satırlı Grid (Satır 1: Sol Marka Lockup + Sağ Simetrik Aksiyonlar, Satır 2: Tam Genişlik Arama) */
+  .fk-main-header {
+    padding: 10px 0 12px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .fk-main-header-content {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-areas:
+      "logo actions"
+      "search search" !important;
+    align-items: center !important;
+    column-gap: 12px !important;
+    row-gap: 10px !important;
+    width: 100% !important;
+    padding: 0 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1. Sol: media_1794005169478_0fb39134.png Referanslı İkon Rozeti + Marka Başlığı + Subtitle Badge */
+  .fk-logo-area {
+    grid-area: logo !important;
+    justify-self: start !important;
+    display: flex !important;
+    align-items: center !important;
+    text-align: left !important;
+    width: auto !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .fk-logo-link {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  .fk-logo-desktop {
+    display: none !important;
+  }
+
+  .fk-logo-mobile-lockup {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .fk-logo-badge-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #ff6000 0%, #ff7700 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 3px 10px rgba(255, 96, 0, 0.28) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fk-logo-mobile-texts {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+
+  .fk-brand-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 21px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #0f172a !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .fk-title-orange {
+    color: #ff6000 !important;
+  }
+
+  .fk-brand-subtitle-badge {
+    margin-top: 3px !important;
+    display: inline-block !important;
+    background: #0f172a !important;
+    color: #ff6000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 8.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    padding: 2.5px 7px !important;
+    border-radius: 4px !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  /* Desktop Aksiyonlarını Mobilde Gizle */
+  .fk-user-actions-desktop {
+    display: none !important;
+  }
+
+  /* 2. Sağ: Referans Görselle Birebir Simetrik Squircle Aksiyon Butonları */
+  .fk-mobile-action-group {
+    grid-area: actions !important;
+    justify-self: end !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fk-mobile-action-btn {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    border: none !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fk-mobile-action-btn:active {
+    transform: scale(0.94) !important;
+  }
+
+  /* Sarı / Turuncu Çağrı ve İletişim Butonu */
+  .fk-mobile-btn-call {
+    background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%) !important;
+    color: #0f172a !important;
+    box-shadow: 0 3px 10px rgba(251, 133, 0, 0.3) !important;
+  }
+
+  .fk-mobile-btn-call svg {
+    stroke: #0f172a !important;
+    display: block !important;
+  }
+
+  /* Sepet Butonu ve Bildirim Rozeti */
+  .fk-mobile-btn-cart {
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    color: #0f172a !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    position: relative !important;
+  }
+
+  .fk-mobile-cart-wrap {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .fk-mobile-btn-cart .fk-badge {
+    position: absolute !important;
+    top: -8px !important;
+    right: -8px !important;
+    background: #ff6000 !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    min-width: 17px !important;
+    height: 17px !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    border: 2px solid #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 2px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Koyu Lacivert 'MENÜ' Butonu */
+  .fk-mobile-btn-menu {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25) !important;
+  }
+
+  .fk-mobile-menu-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+
+  .fk-mobile-btn-menu svg {
+    stroke: #ffffff !important;
+    display: block !important;
+  }
+
+  .fk-mobile-menu-label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.06em !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+  }
+
+  /* 3. İkinci Satır: %100 Genişlikte Yuvarlatılmış Modern Arama Çubuğu */
+  .fk-search-area {
+    grid-area: search !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2px 0 0 0 !important;
+  }
+
+  .fk-search-form {
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  .fk-search-input {
+    width: 100% !important;
+    height: 42px !important;
+    background-color: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 21px !important;
+    padding: 0 44px 0 16px !important;
+    font-size: 13.5px !important;
+    color: #0f172a !important;
+    box-sizing: border-box !important;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.02) !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .fk-search-input:focus {
+    background-color: #ffffff !important;
+    border-color: #ff6000 !important;
+    box-shadow: 0 0 0 3px rgba(255, 96, 0, 0.12) !important;
+    outline: none !important;
+  }
+
+  .fk-search-btn {
+    position: absolute !important;
+    right: 4px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    color: #64748b !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+
+  /* 5. 3. Satır: Yatay Tab Menü (Asla 2 Satıra Kırılmaz, Parmakla Yumuşak Kaydırılır) */
+  .fk-nav-bar {
+    padding: 6px 0 !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+
+  .fk-nav-bar-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 0 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .fk-nav-bar-content::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .fk-category-trigger-wrap {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+  }
+
+  .fk-all-categories-btn {
+    height: 32px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0 !important;
+    border-radius: 16px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: none !important;
+    width: auto !important;
+    min-width: max-content !important;
+  }
+
+  .fk-all-categories-btn * {
+    white-space: nowrap !important;
+  }
+
+  .fk-all-cat-text {
+    white-space: nowrap !important;
+    display: inline !important;
+  }
+
+  .fk-horizontal-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .fk-nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    border-radius: 16px !important;
+    background-color: #f8fafc !important;
+    color: #475569 !important;
+    white-space: nowrap !important;
+    border: 1px solid #e2e8f0 !important;
+    flex-shrink: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .fk-nav-link.fk-nav-orange {
+    background-color: #fff7ed !important;
+    color: #ff6000 !important;
+    border-color: #ffedd5 !important;
+  }
+
+  /* Hero Slider Mobilde */
+  .fk-hero-slider-wrap {
+    padding: 6px 0 14px 0;
+  }
+
+  .fk-hero-slider-viewport {
+    aspect-ratio: 1920 / 885 !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+  }
+
+  .fk-slide-content-container {
+    padding: 0 20px;
+  }
+
+  .fk-slide-text-block {
+    max-width: 100%;
+  }
+
+  .fk-slide-tagline {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .fk-slide-title {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .fk-slide-subtitle {
+    font-size: 12px;
+    margin-bottom: 14px;
+    max-width: 220px;
+    line-height: 1.35;
+  }
+
+  .fk-slide-btn {
+    padding: 8px 20px;
+    font-size: 11.5px;
+  }
+
+  .fk-slide-handwritten-note {
+    display: none; /* Mobilde yazı kalabalığı yapmaz */
+  }
+
+  .fk-slider-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .fk-slider-prev { left: 8px; }
+  .fk-slider-next { right: 8px; }
+}
+
+/* =========================================================
+   /* =========================================================
+   BANNER ÜSTÜ ÇOK SATAN ÜRÜNLER VİTRİN BİLEŞENİ (FULL RESPONSIVE & MOBILE FIRST)
+   ========================================================= */
+.fk-bestseller-overlay-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 16px 0 36px 0;
+}
+
+.fk-bestseller-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.fk-bestseller-banner-box {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #fbf7f4 0%, #f4eae1 45%, #ecdbce 100%);
+  border: 1px solid rgba(226, 206, 192, 0.7);
+  border-radius: 16px;
+  padding: 30px 32px 30px 36px;
+  box-shadow: 0 8px 30px rgba(74, 40, 24, 0.06);
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+}
+
+/* Sol Tanıtım Bloğu */
+.fk-bestseller-promo-col {
+  flex: 0 0 250px;
+  max-width: 250px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fk-bestseller-badge {
+  display: inline-block;
+  font-family: var(--fk-font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #ff6000;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.fk-bestseller-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #24120a;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.fk-title-break {
+  display: block;
+}
+
+.fk-bestseller-subtitle {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #4a2818;
+  margin-bottom: 22px;
+}
+
+.fk-bestseller-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background-color: #ff6000;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(255, 96, 0, 0.35);
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.fk-bestseller-btn:hover {
+  background-color: #e05500;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 96, 0, 0.5);
+}
+
+/* Sağ Ürün Kartları Slider / Track Alanı */
+.fk-bestseller-products-col {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.fk-bestseller-products-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 8px 2px;
+  width: 100%;
+}
+
+.fk-bestseller-products-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tekil Bestseller Ürün Kartı (Kullanıcı Talebiyle %20 Küçültüldü & Kusursuz Simetri) */
+.fk-bs-card {
+  flex: 0 0 calc((100% - 36px) / 4);
+  min-width: 145px;
+  max-width: 175px;
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.fk-bs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* 2:3 Görsel Alanı */
+.fk-bs-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.fk-bs-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.fk-bs-card:hover .fk-bs-card-img {
+  transform: scale(1.04);
+}
+
+/* Favori Kalp Butonu */
+.fk-bs-wishlist-btn {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  color: #475569;
+  z-index: 6;
+  transition: all 0.15s ease;
+}
+
+.fk-bs-wishlist-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.fk-bs-wishlist-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.fk-bs-wishlist-btn.active svg {
+  fill: #ef4444;
+  stroke: #ef4444;
+}
+
+/* Video Rozeti */
+.fk-bs-badge-video {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2.5px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Karusel Noktaları */
+.fk-bs-carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 3.5px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fk-bs-carousel-dots .fk-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.fk-bs-carousel-dots .fk-dot.active {
+  background: #ffffff;
+  width: 5px;
+  height: 5px;
+}
+
+/* Renk Seçenek Sayacı */
+.fk-bs-swatches-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 5;
+}
+
+.fk-swatch-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 33%, #ec4899 33% 66%, #f97316 66%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Kart Bilgi Gövdesi (%20 Ölçekleme) */
+.fk-bs-card-body {
+  padding: 8px 9px 10px 9px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fk-bs-card-cat {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fk-bs-card-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
+  height: 30px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+
+.fk-bs-card-title:hover {
+  color: #ff6000;
+}
+
+/* Değerlendirme & Kamera İkonu */
+.fk-bs-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+.fk-bs-stars {
+  color: #eab308;
+  letter-spacing: -1px;
+}
+
+.fk-bs-rating-count {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 10.5px;
+}
+
+.fk-bs-camera-icon {
+  color: #94a3b8;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Beden Seçenekleri */
+.fk-bs-size-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.fk-bs-size-pill {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #334155;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kart Alt Bölüm (Fiyat) */
+.fk-bs-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fk-bs-price {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #059669;
+  letter-spacing: -0.2px;
+}
+
+/* Masaüstü Ok Butonları */
+.fk-bs-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.fk-bs-nav-prev {
+  left: 6px;
+}
+
+.fk-bs-nav-next {
+  right: 6px;
+}
+
+.fk-bs-nav-arrow:hover {
+  background: #ff6000;
+  color: #ffffff;
+  border-color: #ff6000;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBİL)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .fk-bestseller-banner-box {
+    flex-direction: column;
+    padding: 22px 20px;
+    gap: 16px;
+  }
+  .fk-bestseller-promo-col {
+    max-width: 100%;
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .fk-title-break {
+    display: inline;
+  }
+  .fk-bestseller-title {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .fk-bestseller-subtitle {
+    margin-bottom: 0;
+  }
+  .fk-bestseller-products-col {
+    width: 100%;
+  }
+  .fk-bs-card {
+    flex: 0 0 calc((100% - 28px) / 3);
+    min-width: 175px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fk-bestseller-overlay-wrap {
+    padding: 10px 0 20px 0;
+  }
+  .fk-bestseller-container {
+    padding: 0 12px;
+  }
+  .fk-bestseller-banner-box {
+    padding: 14px 12px 16px 12px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+  .fk-bestseller-promo-col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .fk-bestseller-badge {
+    font-size: 9.5px;
+    margin-bottom: 2px;
+  }
+  .fk-bestseller-title {
+    font-size: 18px;
+    line-height: 1.15;
+    margin-bottom: 2px;
+  }
+  .fk-bestseller-subtitle {
+    font-size: 11px;
+    margin-bottom: 0;
+  }
+  .fk-bestseller-btn {
+    padding: 7px 13px;
+    font-size: 10.5px;
+    font-weight: 700;
+    gap: 4px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .fk-bestseller-products-col {
+    width: 100%;
+  }
+  .fk-bestseller-products-track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 2px 6px 2px;
+    margin: 0 -2px;
+  }
+  .fk-bs-card {
+    flex: 0 0 calc(46% - 5px) !important;
+    min-width: 145px !important;
+    max-width: 172px !important;
+    scroll-snap-align: start;
+    border-radius: 10px;
+  }
+  .fk-bs-wishlist-btn {
+    top: 6px;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+  }
+  .fk-bs-badge-video {
+    bottom: 6px;
+    left: 6px;
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+  .fk-bs-swatches-badge {
+    bottom: 6px;
+    right: 6px;
+    font-size: 9px;
+    padding: 1.5px 5px;
+  }
+  .fk-bs-card-body {
+    padding: 7px 8px 9px 8px;
+  }
+  .fk-bs-card-cat {
+    font-size: 9.5px;
+    margin-bottom: 1px;
+  }
+  .fk-bs-card-title {
+    font-size: 11px;
+    height: 28px;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .fk-bs-card-rating {
+    font-size: 9.5px;
+    margin-bottom: 3px;
+  }
+  .fk-bs-size-row {
+    gap: 2.5px;
+    margin-bottom: 4px;
+  }
+  .fk-bs-size-pill {
+    height: 18px;
+    font-size: 8.5px;
+    padding: 0 3.5px;
+  }
+  .fk-bs-price {
+    font-size: 13.5px;
+  }
+  .fk-bs-nav-arrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .fk-bs-card {
+    flex: 0 0 138px !important;
+    min-width: 138px !important;
+  }
+}
+
+
+/* Floating WhatsApp Butonu (Referans ile Birebir) */
+.fk-whatsapp-floating {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #25D366;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.fk-whatsapp-floating:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
+}
+
+/* ==================== 2x2 HAYDİGİY KAMPANYA BANNERLARI ==================== */
+.fk-campaign-banners-section {
+  max-width: 1440px;
+  width: 100%;
+  margin: 36px auto 48px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.fk-banners-2x2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.fk-banner-card {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #f8fafc;
+}
+
+.fk-banner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.fk-banner-fluid-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.fk-banner-card:hover .fk-banner-fluid-img {
+  transform: scale(1.015);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 65px;
+  }
+  .fk-banners-2x2-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .fk-campaign-banners-section {
+    padding: 0 16px;
+    margin: 20px auto 32px !important;
+  }
+  .fk-whatsapp-floating {
+    bottom: 74px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* =========================================================
+   HERO SLIDER CLEAN VECTOR OVERLAY & SAFE DOT CLEARANCE
+   ========================================================= */
+.fk-slide-content-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 56px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fk-hero-slide-badge-title {
+  margin: 0 0 12px 0;
+  font-family: 'Oswald', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.65), 0 1px 4px rgba(0,0,0,0.4);
+  pointer-events: none;
+  user-select: none;
+}
+
+.fk-hero-slide-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: auto;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.fk-hero-slide-cta-btn:hover {
+  background: #ffffff;
+  color: #111827;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .fk-slide-content-overlay {
+    padding-bottom: 34px !important;
+  }
+  .fk-hero-slide-badge-title {
+    font-size: 26px !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75) !important;
+  }
+  .fk-hero-slide-cta-btn {
+    padding: 7px 22px !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.04em !important;
+    border-width: 1px !important;
+  }
+  .fk-slider-dots {
+    bottom: 10px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBİL SABİT TURUNCU ANONS PANOSU & YANIP SÖNEN KAMPANYA TICKER'I
+   ========================================================= */
+
+.fk-mobile-announcement-bar {
+  background: linear-gradient(90deg, #ff6000 0%, #ff5200 100%);
+  color: #ffffff;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 1001;
+  width: 100%;
+}
+
+.fk-mobile-announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.fk-mobile-announcement-text {
+  font-family: var(--fk-font-sans);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.fk-mobile-social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fk-social-icon {
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.fk-social-icon:hover {
+  transform: scale(1.18);
+  opacity: 0.95;
+}
+
+/* 2. Kademe: Dönen & Yanıp Sönen Kampanya Bandı */
+.fk-mobile-campaign-ticker-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  width: 100%;
+}
+
+.fk-ticker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 16px;
+  position: relative;
+  gap: 8px;
+}
+
+.fk-ticker-pulse-dot {
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  background-color: #ff6000;
+  box-shadow: 0 0 0 0 rgba(255, 96, 0, 0.7);
+  animation: fkPulseGlow 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes fkPulseGlow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 96, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 7px rgba(255, 96, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 96, 0, 0);
+  }
+}
+
+.fk-ticker-slider {
+  position: relative;
+  height: 38px;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fk-ticker-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--fk-font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.fk-ticker-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fk-ticker-highlight {
+  font-weight: 900;
+  font-size: 13.5px;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fk-ticker-item strong {
+  font-weight: 900;
+}
+
+.fk-ticker-item .highlight-orange {
+  color: #ff6000;
+  font-weight: 900;
+}
+
+@media (min-width: 769px) {
+  /* Masaüstü (Web) görünümünde mobil anons panosu ve değişen bilgi kartı (ticker) kesinlikle görünmez */
+  .fk-mobile-announcement-bar,
+  .fk-mobile-campaign-ticker-bar {
+    display: none !important;
+  }
+}
+
+/* ========================================================
+   HAYDİGİY / TRENDYOL STİLİ ÜRÜN GRİDİ RESPONSIVE
+   ======================================================== */
+.fk-product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 1200px) {
+  .fk-product-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .fk-product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+}
+

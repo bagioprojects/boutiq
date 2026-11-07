@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  fkbutik:
+    build: .
+    container_name: fkbutik-ecommerce
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=fkbutik-super-secret-jwt-token-key-2026-production
+    volumes:
+      - fkbutik-data:/app/public/data
+
+volumes:
+  fkbutik-data:

@@ -1,0 +1,521 @@
+/* FK BUTİK - Üyelik & Giriş Sayfası Stilleri (Auth) */
+:root {
+  --fk-primary: #ff6000;
+  --fk-primary-dark: #e05300;
+  --fk-dark: #0f172a;
+  --fk-text: #1e293b;
+  --fk-muted: #64748b;
+  --fk-border: #e2e8f0;
+  --fk-input-bg: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--fk-text);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
+.auth-header {
+  border-bottom: 1px solid var(--fk-border);
+  background: #fff;
+  padding: 16px 32px;
+}
+.auth-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.brand-logo .logo-main {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+.brand-logo .logo-accent {
+  color: var(--fk-primary);
+}
+.brand-logo .logo-sub {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.auth-search {
+  flex: 1;
+  max-width: 580px;
+  position: relative;
+}
+.auth-search input {
+  width: 100%;
+  padding: 11px 44px 11px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+}
+.auth-search input:focus {
+  border-color: var(--fk-primary);
+}
+.auth-search button {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.auth-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.auth-action-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  transition: color 0.15s;
+}
+.auth-action-link:hover {
+  color: var(--fk-primary);
+}
+.auth-action-link svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* Ana Auth Alanı */
+.auth-main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px 16px 30px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+}
+
+/* Sekmeler */
+.auth-tabs {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 28px;
+}
+.auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  background: none;
+  border: none;
+}
+.auth-tab.active {
+  color: var(--fk-primary);
+}
+.auth-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--fk-primary);
+}
+
+/* Form Alanları */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.input-container {
+  position: relative;
+}
+.auth-input {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--fk-input-bg);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s;
+}
+.auth-input:focus {
+  background: #ffffff;
+  border-color: var(--fk-primary);
+  box-shadow: 0 0 0 3px rgba(255, 96, 0, 0.12);
+}
+.auth-input::placeholder {
+  color: #94a3b8;
+}
+
+.btn-toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+.btn-toggle-eye:hover {
+  color: var(--fk-dark);
+}
+
+.forgot-password-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--fk-primary);
+  align-self: flex-start;
+  margin-top: -4px;
+}
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Butonlar */
+.btn-primary-auth {
+  width: 100%;
+  padding: 14px;
+  background: var(--fk-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.15s;
+}
+.btn-primary-auth:hover {
+  background: var(--fk-primary-dark);
+}
+
+.btn-secondary-auth {
+  width: 100%;
+  padding: 13px;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-secondary-auth:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Checkbox Grupları */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #64748b;
+  margin-top: 4px;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--fk-primary);
+  margin-top: 2px;
+  cursor: pointer;
+}
+.checkbox-group a {
+  color: var(--fk-primary);
+  font-weight: 600;
+}
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+/* Yasal Bilgilendirme Metni */
+.auth-legal-notice {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-top: 14px;
+  text-align: center;
+}
+.auth-legal-notice a {
+  color: var(--fk-primary);
+  font-weight: 600;
+}
+
+/* Alt Güven & Hizmet Rozetleri (4'lü sıra) */
+.trust-badges-bar {
+  border-top: 1px solid var(--fk-border);
+  background: #ffffff;
+  padding: 30px 16px;
+  margin-top: auto;
+}
+.trust-badges-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff7ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fk-primary);
+  flex-shrink: 0;
+}
+.trust-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+.trust-sub {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.trust-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Responsive & Mobil/Web Ayrımı */
+@media (max-width: 768px) {
+  .auth-header {
+    padding: 14px 16px;
+  }
+  .auth-header-container {
+    justify-content: center !important;
+    position: relative;
+  }
+  .auth-search {
+    display: none !important;
+  }
+  /* Mobilde header'dan sepet, favoriler ve giriş butonları kaldırıldı */
+  .auth-nav-actions {
+    display: none !important;
+  }
+  .brand-logo {
+    text-align: center;
+  }
+  .brand-logo .logo-main {
+    font-size: 28px !important;
+  }
+
+  /* GÜVEN ROZETLERİ MOBİLDE GİZLENDİ (SADECE WEB GÖRÜNÜMÜNDE GÖSTERİLİR) */
+  .trust-badges-bar {
+    display: none !important;
+  }
+
+  .auth-card {
+    padding: 0 4px;
+  }
+  .auth-main-wrapper {
+    justify-content: flex-start !important;
+    padding: 8px 16px 24px !important;
+  }
+  .auth-tabs {
+    margin-bottom: 16px !important;
+    margin-top: 4px !important;
+  }
+
+}
+
+@media (min-width: 769px) {
+  .trust-badges-bar {
+    display: none !important;
+  }
+}
+
+
+/* ========================================================
+   GOOGLE İLE HIZLI GİRİŞ VE AYRAÇ STİLLERİ
+   ======================================================== */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 16px 0 14px 0;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+.auth-divider span {
+  padding: 0 14px;
+}
+
+.btn-google-auth {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1.5px solid #dadce0;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #3c4043;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+.btn-google-auth:hover {
+  background: #f8fafc;
+  border-color: #c2c7d0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);
+  transform: translateY(-1px);
+}
+.btn-google-auth:active {
+  background: #f1f5f9;
+  transform: translateY(0);
+}
+.google-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Standart Masaüstü / Mobil Logo Ayrımı */
+.fk-logo-desktop {
+  display: block;
+}
+.fk-logo-mobile-wrap {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .auth-header {
+    padding: 10px 16px 14px !important;
+  }
+  .fk-logo-area {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  .fk-logo-desktop {
+    display: none !important;
+  }
+  .fk-logo-mobile-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    width: 100% !important;
+  }
+  .fk-logo-mobile-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 28px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
+  }
+  .fk-logo-orange {
+    color: #ff6000 !important;
+  }
+  .fk-logo-navy {
+    color: #0f172a !important;
+  }
+  .fk-logo-mobile-sub {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.22em !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    margin-top: 4px !important;
+    line-height: 1 !important;
+  }
+}

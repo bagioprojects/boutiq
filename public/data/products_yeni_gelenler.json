@@ -1,0 +1,338 @@
+[
+  {
+    "id": 1,
+    "name": "Yaka Fiyonklu Çizgili Triko Kazak Ekrusiyah - 72547.2302.",
+    "sku": "725472302",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 2,
+    "has_video": true,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_1_725472302.webp",
+    "url": "/urun/yaka-fiyonklu-cizgili-triko-kazak-ekrusiyah-725472302-104587"
+  },
+  {
+    "id": 2,
+    "name": "Yaka Fiyonklu Çizgili Triko Kazak Ekrukırmızı - 72547.2302.",
+    "sku": "725472302",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 2,
+    "has_video": true,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_2_725472302.webp",
+    "url": "/urun/yaka-fiyonklu-cizgili-triko-kazak-ekrukirmizi-725472302-104588"
+  },
+  {
+    "id": 3,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Siyah - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_3_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-siyah-765202286-104589"
+  },
+  {
+    "id": 4,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Bebemavisi - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_4_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-bebemavisi-765202286-104590"
+  },
+  {
+    "id": 5,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Bej - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_5_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-bej-765202286-104591"
+  },
+  {
+    "id": 6,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Pembe - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_6_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-pembe-765202286-104592"
+  },
+  {
+    "id": 7,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Kahve - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_7_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-kahve-765202286-104593"
+  },
+  {
+    "id": 8,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Gri - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_8_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-gri-765202286-104594"
+  },
+  {
+    "id": 9,
+    "name": "Gümüş Kanat Baskılı Kapüşonlu Sweatshirt Ekru - 76520.2286.",
+    "sku": "765202286",
+    "category": "Kadın Üst Giyim",
+    "price": "499,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 7,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_9_765202286.webp",
+    "url": "/urun/gumus-kanat-baskili-kapusonlu-sweatshirt-ekru-765202286-104595"
+  },
+  {
+    "id": 10,
+    "name": "Triko Dik Yaka Düğmeli Kadın Hırka Siyah - 76510.1411.",
+    "sku": "765101411",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_10_765101411.webp",
+    "url": "/urun/triko-dik-yaka-dugmeli-kadin-hirka-siyah-765101411-104599"
+  },
+  {
+    "id": 11,
+    "name": "Triko Dik Yaka Düğmeli Kadın Hırka Bej - 76510.1411.",
+    "sku": "765101411",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_11_765101411.webp",
+    "url": "/urun/triko-dik-yaka-dugmeli-kadin-hirka-bej-765101411-104600"
+  },
+  {
+    "id": 12,
+    "name": "Triko Dik Yaka Düğmeli Kadın Hırka Kahve - 76510.1411.",
+    "sku": "765101411",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_12_765101411.webp",
+    "url": "/urun/triko-dik-yaka-dugmeli-kadin-hirka-kahve-765101411-104601"
+  },
+  {
+    "id": 13,
+    "name": "Dokuma Desenli Polo Yaka Gömlek Bej - 76128.2284.",
+    "sku": "761282284",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_13_761282284.webp",
+    "url": "/urun/dokuma-desenli-polo-yaka-gomlek-bej-761282284-104602"
+  },
+  {
+    "id": 14,
+    "name": "Denim Gömlek Yaka Balon Kol Crop Ceket Koyufüme - 76282.392.",
+    "sku": "76282392",
+    "category": "Kadın Üst Giyim",
+    "price": "599,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 1,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_14_76282392.webp",
+    "url": "/urun/denim-gomlek-yaka-balon-kol-crop-ceket-koyufume-76282392-104604"
+  },
+  {
+    "id": 15,
+    "name": "Dik Yaka Fermuarlı Peluş Ceket Bejkahve - 76449.360.",
+    "sku": "76449360",
+    "category": "Kadın Üst Giyim",
+    "price": "599,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 1,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_15_76449360.webp",
+    "url": "/urun/dik-yaka-fermuarli-pelus-ceket-bejkahve-76449360-104608"
+  },
+  {
+    "id": 16,
+    "name": "Denim Fitilli Yaka Kargo Cepli Crop Ceket Mavikahve - 76283.392.",
+    "sku": "76283392",
+    "category": "Kadın Üst Giyim",
+    "price": "599,99 TL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "color_count": 1,
+    "has_video": true,
+    "has_back_inset": true,
+    "image": "/images/products/yeni-gelenler/prod_16_76283392.webp",
+    "url": "/urun/denim-fitilli-yaka-kargo-cepli-crop-ceket-mavikahve-76283392-104609"
+  },
+  {
+    "id": 17,
+    "name": "Buzy Ribana Parmak Geçmeli Çıtçıtlı Body  Siyah - 76522.2153.",
+    "sku": "765222153",
+    "category": "Kadın Üst Giyim",
+    "price": "219,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_17_765222153.webp",
+    "url": "/urun/buzy-ribana-parmak-gecmeli-citcitli-body-siyah-765222153-104612"
+  },
+  {
+    "id": 18,
+    "name": "Triko Yarasa Kol Kazak Kırmızı - 76454.2317.",
+    "sku": "764542317",
+    "category": "Kadın Üst Giyim",
+    "price": "399,99 TL",
+    "sizes": [
+      "STANDART"
+    ],
+    "color_count": 2,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_18_764542317.webp",
+    "url": "/urun/triko-yarasa-kol-kazak-kirmizi-764542317-104618"
+  },
+  {
+    "id": 19,
+    "name": "Palazzo Kot Pantolon Koyumavi - 34005.1904.",
+    "sku": "340051904",
+    "category": "Kadın Alt Giyim",
+    "price": "479,99 TL",
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_19_340051904.webp",
+    "url": "/urun/palazzo-kot-pantolon-koyumavi-340051904-104678"
+  },
+  {
+    "id": 20,
+    "name": "Baggy Kot Pantolon Açıklaci - 76141.1904.",
+    "sku": "761411904",
+    "category": "Kadın Alt Giyim",
+    "price": "479,99 TL",
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "color_count": 1,
+    "has_video": false,
+    "has_back_inset": false,
+    "image": "/images/products/yeni-gelenler/prod_20_761411904.webp",
+    "url": "/urun/baggy-kot-pantolon-aciklaci-761411904-104683"
+  }
+]

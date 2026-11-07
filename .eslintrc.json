@@ -1,0 +1,58 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "boundaries"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked"
+  ],
+  "settings": {
+    "boundaries/elements": [
+      { "type": "core", "pattern": "src/core/*" },
+      { "type": "catalog", "pattern": "src/modules/catalog/*" },
+      { "type": "inventory", "pattern": "src/modules/inventory/*" },
+      { "type": "orders", "pattern": "src/modules/orders/*" },
+      { "type": "cart-checkout", "pattern": "src/modules/cart-checkout/*" },
+      { "type": "customers-b2b", "pattern": "src/modules/customers-b2b/*" },
+      { "type": "discounts", "pattern": "src/modules/discounts/*" },
+      { "type": "markets-geo", "pattern": "src/modules/markets-geo/*" },
+      { "type": "seo-geo-engine", "pattern": "src/modules/seo-geo-engine/*" },
+      { "type": "cms-theme-engine", "pattern": "src/modules/cms-theme-engine/*" },
+      { "type": "payments-shipping", "pattern": "src/modules/payments-shipping/*" },
+      { "type": "analytics-webhooks", "pattern": "src/modules/analytics-webhooks/*" }
+    ]
+  },
+  "rules": {
+    "no-console": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "complexity": ["error", 5],
+    "max-lines-per-function": ["error", { "max": 30, "skipBlankLines": true, "skipComments": true }],
+    "max-params": ["error", 3],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "boundaries/element-types": ["error", {
+      "default": "disallow",
+      "rules": [
+        { "from": "*", "allow": ["core"] },
+        { "from": "catalog", "allow": ["core"] },
+        { "from": "inventory", "allow": ["core", "catalog"] },
+        { "from": "orders", "allow": ["core", "catalog", "inventory", "discounts", "payments-shipping"] },
+        { "from": "cart-checkout", "allow": ["core", "catalog", "inventory", "discounts", "customers-b2b", "markets-geo"] },
+        { "from": "customers-b2b", "allow": ["core"] },
+        { "from": "discounts", "allow": ["core", "catalog", "customers-b2b"] },
+        { "from": "markets-geo", "allow": ["core"] },
+        { "from": "seo-geo-engine", "allow": ["core", "catalog"] },
+        { "from": "cms-theme-engine", "allow": ["core", "catalog"] },
+        { "from": "payments-shipping", "allow": ["core"] },
+        { "from": "analytics-webhooks", "allow": ["core", "orders", "catalog"] }
+      ]
+    }]
+  }
+}

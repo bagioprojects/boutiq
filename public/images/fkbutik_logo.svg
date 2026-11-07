@@ -1,0 +1,65 @@
+<svg width="184" height="48" viewBox="0 0 184 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Canlı Lüks Turuncu Gradyan -->
+    <linearGradient id="fkOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a1a"/>
+      <stop offset="100%" stop-color="#ff5500"/>
+    </linearGradient>
+    <!-- Lüks Siyah / Antrasit Gradyan -->
+    <linearGradient id="butikBlackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e2430"/>
+      <stop offset="100%" stop-color="#0f131a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ==================== SOL: FK HARFLERİ (%100 AYNI HİZADA) ==================== -->
+  <g fill="url(#fkOrangeGrad)">
+    <!-- 'F' -->
+    <g transform="translate(6.0, 35) scale(0.016107, -0.016107)">
+      <path d="M993 1171H487V819H952V557H487V0H164V1434H993Z"/>
+    </g>
+    <!-- 'K' -->
+    <g transform="translate(24.44, 35) scale(0.016107, -0.016107)">
+      <path d="M1356 0H948L530 623Q518 641 492 702H487V0H164V1434H487V756H492Q504 784 532 836L928 1434H1313L813 750Z"/>
+    </g>
+    <!-- 'F' ve 'K' arasındaki zarif dikiş/kıvrım vurgusu -->
+    <circle cx="23.65" cy="11.5" r="1.4" fill="#ff7a1a"/>
+  </g>
+
+  <!-- ==================== AYIRICI DİKEY TASARIM ÇİZGİSİ ==================== -->
+  <line x1="53.85" y1="9" x2="53.85" y2="35" stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="53.85" cy="22" r="2.5" fill="#ff6000"/>
+
+  <!-- ==================== SAĞ: BUTİK HARFLERİ (%100 AYNI TABAN VE TAVAN HİZASI) ==================== -->
+  <g fill="url(#butikBlackGrad)">
+    <!-- 'B' Harfi -->
+    <g transform="translate(63.85, 35) scale(0.016107, -0.016107)">
+      <path d="M164 0V1434H686Q926 1434 1055.0 1346.0Q1184 1258 1184 1098Q1184 982 1105.5 895.0Q1027 808 905 774V770Q1058 751 1149.5 657.0Q1241 563 1241 428Q1241 231 1100.0 115.5Q959 0 715 0ZM487 1196V856H629Q729 856 786.5 904.5Q844 953 844 1038Q844 1196 608 1196ZM487 616V238H662Q774 238 837.5 290.0Q901 342 901 432Q901 518 838.5 567.0Q776 616 664 616Z"/>
+    </g>
+    <!-- 'U' Harfi -->
+    <g transform="translate(87.58, 35) scale(0.016107, -0.016107)">
+      <path d="M1333 621Q1333 -25 731 -25Q147 -25 147 606V1434H471V602Q471 254 743 254Q1010 254 1010 590V1434H1333Z"/>
+    </g>
+    <!-- 'T' Harfi -->
+    <g transform="translate(114.01, 35) scale(0.016107, -0.016107)">
+      <path d="M1171 1171H762V0H438V1171H31V1434H1171Z"/>
+    </g>
+    <!-- 'I' Harfi -->
+    <g transform="translate(135.91, 35) scale(0.016107, -0.016107)">
+      <path d="M487 0H164V1434H487Z"/>
+    </g>
+    <!-- 'K' Harfi -->
+    <g transform="translate(148.94, 35) scale(0.016107, -0.016107)">
+      <path d="M1356 0H948L530 623Q518 641 492 702H487V0H164V1434H487V756H492Q504 784 532 836L928 1434H1313L813 750Z"/>
+    </g>
+  </g>
+
+  <!-- 'İ' HARFİNİN ÖZEL TURUNCU TASARIM NOKTASI (Matematiksel Merkez: x=141.14, y=7.0) -->
+  <circle cx="141.14" cy="7.0" r="2.4" fill="#ff6000"/>
+
+  <!-- ==================== ALT LÜKS İMZA (EXCLUSIVE COLLECTION) ==================== -->
+  <g id="brand-subtext">
+    <line x1="63.8" y1="39" x2="170.4" y2="39" stroke="#ff6000" stroke-width="0.75" stroke-opacity="0.45"/>
+    <text x="63.8" y="45.5" font-family="'Montserrat', 'Inter', -apple-system, sans-serif" font-size="6.2" font-weight="700" fill="#64748b" letter-spacing="0.22em">EXCLUSIVE COLLECTION</text>
+  </g>
+</svg>
